@@ -11,3 +11,20 @@ Expone servicios rest
 
 mvn clean
 mvn install
+
+
+## documentacion api swagger
+http://localhost:8080/arquitectura/swagger-ui.html#/
+
+
+## Script DB
+CREATE SEQUENCE ejemplo.estudiantes_seq
+start with 1
+increment by 1;
+
+CREATE TABLE ejemplo.estudiantes(
+id_estudiante          numeric  NOT null default nextval('ejemplo.estudiantes_seq'),
+nombre                 varchar  NOT null,
+identificacion       varchar  NOT null,
+CONSTRAINT estudiante_pk PRIMARY KEY (id_estudiante)
+);
