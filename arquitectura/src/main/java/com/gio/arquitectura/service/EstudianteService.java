@@ -34,7 +34,7 @@ public class EstudianteService {
 		MensajeDTO respuesta = new MensajeDTO();
 		respuesta.setCodigo(Constantes.OK);
 		
-		if(estudiante.getIdentificacion() == null || estudiante.getIdentificacion().isBlank() || estudiante.getNombre() == null  || estudiante.getNombre().isBlank()) {
+		if(estudiante.getIdentificacion() == null  || estudiante.getNombre() == null) {
 			respuesta.setCodigo(Constantes.ERROR);
 			respuesta.setMensaje(Constantes.OBJETO_MAL_FORMADO);
 			return new ResponseEntity<>(respuesta, HttpStatus.CONFLICT);
@@ -59,7 +59,7 @@ public class EstudianteService {
 		MensajeDTO respuesta = new MensajeDTO();
 		respuesta.setCodigo(Constantes.OK);
 		
-		if( estudiante.getIdentificacion() == null || estudiante.getIdentificacion().isBlank()) {
+		if( estudiante.getIdentificacion() == null) {
 			respuesta.setCodigo(Constantes.ERROR);
 			respuesta.setMensaje(Constantes.OBJETO_MAL_FORMADO);
 			return new ResponseEntity<>(respuesta, HttpStatus.CONFLICT);
